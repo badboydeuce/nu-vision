@@ -4,7 +4,184 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nuivision</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: #767679;
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+
+      .main-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .center-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 700px;
+        background-color: #f6f6f6;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .top-section {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        border-bottom: 1px solid #cccccc;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+
+      .top-section img {
+        max-width: 50%;
+        height: auto;
+        max-height: 90px;
+      }
+
+      .middle-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .form {
+        width: 100%;
+        max-width: 400px;
+        padding: 0;
+      }
+
+      .label {
+        color: #2e2e2e;
+        font-family: sans-serif;
+        margin-top: 10px;
+      }
+
+      .input-section {
+        width: 100%;
+        margin-top: 10px;
+        box-sizing: border-box;
+        border: 1px solid #cccccc;
+        height: 45px;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .login {
+        border-radius: 5px;
+        background-color: #8da3ad;
+        width: 100%;
+        border: none;
+        height: 40px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+
+      .login:not(:disabled) {
+        background-color: #415d6a;
+        cursor: pointer;
+      }
+
+      .login:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+
+      .down-section {
+        background-color: #003f53;
+        display: flex;
+        color: white;
+        align-items: center;
+        gap: 20px;
+        font-family: sans-serif;
+        font-size: 13px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 15px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+
+      .Forgot {
+        color: black;
+        cursor: pointer;
+        font-family: sans-serif;
+        font-size: 13px;
+        text-align: end;
+        margin-top: 20px;
+      }
+
+      .Forgot:hover {
+        color: #0080a8;
+      }
+
+      .bottom-logo {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .bottom-logo img {
+        max-width: 130px;
+        height: auto;
+      }
+
+      @media (max-width: 600px) {
+        .center-container {
+          max-width: 100%;
+          margin: 0 10px;
+        }
+
+        .top-section {
+          justify-content: center;
+          padding: 10px;
+        }
+
+        .top-section img {
+          max-width: 70%;
+          margin: 0;
+        }
+
+        .form {
+          max-width: 100%;
+          padding: 0 20px;
+        }
+
+        .down-section {
+          gap: 15px;
+          font-size: 12px;
+          padding: 10px;
+        }
+
+        .bottom-logo img {
+          max-width: 100px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .input-section,
+        .login {
+          font-size: 14px;
+        }
+
+        .down-section {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="main-section">
@@ -12,9 +189,7 @@
         <div class="top-section">
           <img
             src="https://chambermaster.blob.core.windows.net/images/members/764/10280/MemPageHeader_Nuvision_color_01_Logo.jpg"
-            alt=""
-            height="90%"
-            width="50%"
+            alt="Nuivision Logo"
           />
         </div>
         <div class="middle-section">
@@ -33,13 +208,13 @@
                   font-family: sans-serif;
                   margin-top: 10px;
                 "
-                >Passsword</label
+                >Password</label
               >
               <input type="password" id="password" class="input-section" />
             </div>
 
             <div style="display: flex; gap: 10px; margin-top: 10px">
-              <input type="checkbox" />
+              <input type="checkbox" id="rememberMe" />
               <p style="font-family: sans-serif; color: #2e2e2e">Remember me</p>
             </div>
             <button class="login" id="loginBtn" disabled type="submit">
@@ -57,22 +232,10 @@
           |
           <span class="rates">Rates</span>
         </div>
-
-        <div
-          style="
-            width: 130px;
-            height: 140px;
-            margin: 0 auto;
-            margin-top: 30px;
-            display: block;
-            align-items: center;
-          "
-        >
+        <div class="bottom-logo">
           <img
-            src="https://cdn1.onlineaccess1.com/cdn/depot/5063/3393/ba5a89e5187907b47df565433c5fa651/assets/images/ncua_logo_large-4a4a13e41007adaf4841dd9e4b145458.png"
-            alt=""
-            height="40%"
-            width="100%"
+            src="https://cdn1.onlineaccess1.com/cdn/depot/5063/3393/ba5a89e5187907b47df565433c5fa651/assets/images/ncua_logo_large-4a4a89e41007adaf4841dd9e4b145458.png"
+            alt="NCUA Logo"
           />
         </div>
       </div>
@@ -84,11 +247,7 @@
       const loginBtn = document.getElementById("loginBtn");
 
       function checkInputs() {
-        if (loginId.value.trim() !== "" && password.value.trim() !== "") {
-          loginBtn.disabled = false;
-        } else {
-          loginBtn.disabled = true;
-        }
+        loginBtn.disabled = !(loginId.value.trim() && password.value.trim());
       }
 
       loginId.addEventListener("input", checkInputs);
