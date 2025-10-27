@@ -1,0 +1,121 @@
+body {
+  background-color: #767679;
+  font-family: Arial, sans-serif;
+}
+
+.main-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  overflow: hidden;
+}
+
+.top-section {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #cccccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.middle-section {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form {
+  width: 400px;
+  padding: 20px 0 20px 0;
+}
+.label {
+  color: #2e2e2e;
+  font-family: sans-serif;
+  margin-top: 10px;
+}
+.input-section {
+  width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  height: 45px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.login {
+  border-radius: 5px;
+  background-color: #8da3ad;
+  width: 100%;
+  border: none;
+  height: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.login:not(:disabled) {
+  background-color: #415d6a; /* Main enabled color */
+  cursor: pointer;
+}
+
+.down-section {
+  background-color: #003f53;
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 30px;
+  font-family: sans-serif;
+  font-size: 13px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px 0 15px 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.Forgot {
+  color: black;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 13px;
+  text-align: end;
+  margin-top: 30px;
+}
+.Forgot:hover {
+  color: #0080a8;
+}
+
+@media (max-width: 600px) {
+  .top-section {
+    display: flex;
+    justify-content: start;
+    padding: 10px 0 10px 0;
+  }
+  .top-section img {
+    margin-left: 60px;
+  }
+  .center-container {
+  }
+
+  .form {
+    width: 360px;
+    padding: 20px 50px 20px 50px;
+  }
+
+  .down-section {
+  }
+
+  .down-section {
+    gap: 30px;
+  }
+  .rates {
+    margin-top: -5px;
+  }
+}

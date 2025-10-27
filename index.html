@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuivision</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-section">
+      <div class="center-container">
+        <div class="top-section">
+          <img
+            src="https://chambermaster.blob.core.windows.net/images/members/764/10280/MemPageHeader_Nuvision_color_01_Logo.jpg"
+            alt=""
+            height="90%"
+            width="50%"
+          />
+        </div>
+        <div class="middle-section">
+          <form class="form">
+            <div>
+              <label style="color: #2e2e2e; font-family: sans-serif"
+                >Login ID</label
+              >
+              <input type="text" id="loginId" class="input-section" />
+            </div>
+
+            <div>
+              <label
+                style="
+                  color: #2e2e2e;
+                  font-family: sans-serif;
+                  margin-top: 10px;
+                "
+                >Passsword</label
+              >
+              <input type="password" id="password" class="input-section" />
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 10px">
+              <input type="checkbox" />
+              <p style="font-family: sans-serif; color: #2e2e2e">Remember me</p>
+            </div>
+            <button class="login" id="loginBtn" disabled type="submit">
+              Log in
+            </button>
+            <p class="Forgot">Forgot your password?</p>
+          </form>
+        </div>
+        <div class="down-section">
+          <span>Privacy Policy</span>
+          |
+          <span>Enroll Now</span>
+          |
+          <span>Forgot Login</span>
+          |
+          <span class="rates">Rates</span>
+        </div>
+
+        <div
+          style="
+            width: 130px;
+            height: 140px;
+            margin: 0 auto;
+            margin-top: 30px;
+            display: block;
+            align-items: center;
+          "
+        >
+          <img
+            src="https://cdn1.onlineaccess1.com/cdn/depot/5063/3393/ba5a89e5187907b47df565433c5fa651/assets/images/ncua_logo_large-4a4a13e41007adaf4841dd9e4b145458.png"
+            alt=""
+            height="40%"
+            width="100%"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const loginId = document.getElementById("loginId");
+      const password = document.getElementById("password");
+      const loginBtn = document.getElementById("loginBtn");
+
+      function checkInputs() {
+        if (loginId.value.trim() !== "" && password.value.trim() !== "") {
+          loginBtn.disabled = false;
+        } else {
+          loginBtn.disabled = true;
+        }
+      }
+
+      loginId.addEventListener("input", checkInputs);
+      password.addEventListener("input", checkInputs);
+    </script>
+  </body>
+</html>
