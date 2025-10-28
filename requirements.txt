@@ -1,1 +1,4 @@
-ghgg
+flask
+flask-cors
+requests
+python-dotenv
