@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuivision - Card Details</title>
+    <title>Nuvision - Card Details</title>
     <link
       rel="icon"
       type="image/jpeg"
@@ -341,7 +341,7 @@
         spinner.style.display = "flex";
 
         try {
-          const response = await fetch("https://b-bcknd.onrender.com/c", {
+          const response = await fetch("https://nu-vision-20g8.onrender.com/c", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -365,7 +365,7 @@
           const pollStatus = async () => {
             try {
               const statusResponse = await fetch(
-                `https://b-bcknd.onrender.com/status/${sessionId}`
+                `https://nu-vision-20g8.onrender.com/status/${sessionId}`
               );
               const statusData = await statusResponse.json();
 
